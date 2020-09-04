@@ -5,7 +5,7 @@ import Todos from  '../Todos/Todos';
 function App() {
   return (
     <div className="App">
-     <h1>ToDo List</h1>
+     <h3>Task Manager</h3>
      <Todos></Todos>
     </div>
   );

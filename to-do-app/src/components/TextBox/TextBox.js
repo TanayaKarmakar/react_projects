@@ -7,7 +7,7 @@ const textbox = (props) => {
         <div className = "TextBoxContainer">
             <input type = "text" id = "idTxt"></input>
             <button 
-                className = "SuccessButton MarginLeft" 
+                className = "ButtonSuccess MarginLeft" 
                 onClick = {() => props.clicked(document.getElementById("idTxt").value)}>Add</button>
         </div>
     );

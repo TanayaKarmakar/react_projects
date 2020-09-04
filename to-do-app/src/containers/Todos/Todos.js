@@ -45,15 +45,22 @@ class Todos extends Component {
    };
 
    completeTodoItemHandler = (indx) => {
-
+      let currentTodos = [...this.state.todos];
+      let currentTodo = currentTodos[indx];
+      currentTodo.status = 'Completed';
+      this.setState({
+         todos: currentTodos
+      });
    };
 
    render = () => {
       const todoList = this.state.todos.map( (el, indx) => 
-        <Todo 
-        name = {el.name}
-        status = {el.status}
-        clicked = {() => this.deleteTodoItemHandler(indx)}
+        <Todo
+          isCompleted = {el.status !== 'Active'} 
+          name = {el.name}
+          status = {el.status}
+          clicked = {() => this.deleteTodoItemHandler(indx)}
+          completed = {() => this.completeTodoItemHandler(indx)}
         />
       );
       return (
